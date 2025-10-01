@@ -4,6 +4,11 @@ Run the FastAPI backend server
 
 import uvicorn
 import os
+from api import app
+
+# Vercel serverless function handler
+def handler(request):
+    return app(request.scope, request.receive, request.send)
 
 if __name__ == "__main__":
     # Set environment variables if needed

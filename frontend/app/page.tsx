@@ -37,7 +37,7 @@ export default function Home() {
   const [geminiApiKey, setGeminiApiKey] = useState('');
   const [showCredentials, setShowCredentials] = useState(false);
 
-  const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+  const API_BASE = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined' ? window.location.origin + '/api' : '/api');
 
   // Load saved credentials on mount
   useEffect(() => {

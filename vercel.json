@@ -13,7 +13,19 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/backend/api.py"
+      "dest": "/backend/run.py"
+    },
+    {
+      "src": "/health",
+      "dest": "/backend/run.py"
+    },
+    {
+      "src": "/docs",
+      "dest": "/backend/run.py"
+    },
+    {
+      "src": "/openapi.json",
+      "dest": "/backend/run.py"
     },
     {
       "src": "/(.*)",
@@ -22,6 +34,11 @@
   ],
   "env": {
     "PYTHONPATH": "."
+  },
+  "functions": {
+    "backend/run.py": {
+      "maxDuration": 30
+    }
   }
 }
 
