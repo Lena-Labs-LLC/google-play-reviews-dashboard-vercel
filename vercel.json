@@ -1,32 +1,12 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "backend/api.py",
-      "use": "@vercel/python"
-    },
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/next"
+  "functions": {
+    "pages/api/index.py": {
+      "runtime": "@vercel/python"
     }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/backend/api.py"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/$1"
-    }
-  ],
+  },
   "env": {
     "PYTHONPATH": "."
-  },
-  "functions": {
-    "backend/api.py": {
-      "maxDuration": 30
-    }
   }
 }
 
