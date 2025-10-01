@@ -315,8 +315,8 @@ async def health_check():
     }
 
 # Vercel serverless function handler
-def handler(request):
-    return app(request.scope, request.receive, request.send)
+from mangum import Mangum
+handler = Mangum(app)
 
 if __name__ == "__main__":
     import uvicorn

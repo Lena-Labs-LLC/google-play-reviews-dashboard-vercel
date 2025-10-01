@@ -1,10 +1,17 @@
 {
   "version": 2,
-  "functions": {
-    "pages/api/index.py": {
-      "runtime": "@vercel/python"
+  "builds": [
+    {
+      "src": "pages/api/index.py",
+      "use": "@vercel/python"
     }
-  },
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/pages/api/index.py"
+    }
+  ],
   "env": {
     "PYTHONPATH": "."
   }
