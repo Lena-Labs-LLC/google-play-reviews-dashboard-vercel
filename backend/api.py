@@ -9,9 +9,7 @@ from typing import List, Optional, Dict, Any
 import os
 import sys
 
-# Add parent directory to path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
+# Import local modules
 from auth import GooglePlayAuth
 from reviews import GooglePlayReviews
 from ai_response import AIResponseGenerator
@@ -313,6 +311,10 @@ async def health_check():
         "configured": reviews_handler is not None,
         "package": package_name
     }
+
+# Vercel serverless function handler
+def handler(request):
+    return app(request.scope, request.receive, request.send)
 
 if __name__ == "__main__":
     import uvicorn
