@@ -1,0 +1,21 @@
+{
+  "app_name": "Your App",
+  "description": "A great mobile application",
+  "features": [
+    "Feature 1: Description",
+    "Feature 2: Description",
+    "Feature 3: Description"
+  ],
+  "faqs": [
+    {
+      "question": "How do I use this app?",
+      "answer": "Simply download and follow the on-screen instructions."
+    },
+    {
+      "question": "Is this app free?",
+      "answer": "Yes, our app is completely free to use."
+    }
+  ],
+  "target_users": "General mobile users",
+  "support_contact": "support@yourapp.com"
+}

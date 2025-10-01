@@ -1,0 +1,92 @@
+[
+  {
+    "timestamp": "2025-09-29T20:29:22.347967",
+    "review_id": "test_1",
+    "review_text": "Harika bir uygulama! Çok beğendim 👍",
+    "rating": 5,
+    "language": "tr",
+    "original_ai_response": "NanoBanana uygulamasını beğendiğinize çok sevindik! 👍 Yorumunuz için teşekkürler! Uygulamamızı arkadaşlarınızla paylaşmayı unutmayın. Diğer özelliklerimizi de keşfetmekten keyif alacağınızı umuyoruz! 😊",
+    "final_response": "NanoBanana uygulamasını beğendiğinize çok sevindik! 👍 Yorumunuz için teşekkürler! Uygulamamızı arkadaşlarınızla paylaşmayı unutmayın. Diğer özelliklerimizi de keşfetmekten keyif alacağınızı umuyoruz! 😊",
+    "character_count": 201
+  },
+  {
+    "timestamp": "2025-09-29T20:29:24.555159",
+    "review_id": "test_3",
+    "review_text": "Orta seviyede, bazı özellikler eksik",
+    "rating": 3,
+    "language": "en",
+    "original_ai_response": "Thank you for your feedback! We appreciate you trying the NanoBanana App. We understand that you feel some features are missing. We're constantly working on improvements and new additions through regular updates. We hope you'll continue to use NanoBanana and see those improvements soon!",
+    "final_response": "Thank you for your feedback! We appreciate you trying the NanoBanana App. We understand that you feel some features are missing. We're constantly working on improvements and new additions through regular updates. We hope you'll continue to use NanoBanana and see those improvements soon!",
+    "character_count": 287
+  },
+  {
+    "timestamp": "2025-09-29T20:29:25.582917",
+    "review_id": "test_4",
+    "review_text": "Excellent app! Love the features",
+    "rating": 5,
+    "language": "fr",
+    "original_ai_response": "Merci beaucoup pour votre excellente évaluation ! Nous sommes ravis que vous aimiez les fonctionnalités de NanoBanana App. N'hésitez pas à explorer les options de personnalisation (Feature 3) et à partager l'appli avec vos amis !",
+    "final_response": "Merci beaucoup pour votre excellente évaluation ! Nous sommes ravis que vous aimiez les fonctionnalités de NanoBanana App. N'hésitez pas à explorer les options de personnalisation (Feature 3) et à partager l'appli avec vos amis !",
+    "character_count": 229
+  },
+  {
+    "timestamp": "2025-09-29T20:29:28.034176",
+    "review_id": "test_6",
+    "review_text": "Good app but could be better",
+    "rating": 4,
+    "language": "en",
+    "original_ai_response": "Thanks for the 4-star review! We appreciate your feedback. We're always working to improve NanoBanana. Explore our customization options (Feature 3) to personalize your experience. Feel free to share specific suggestions with us at support@nanobanana.com!",
+    "final_response": "Thanks for the 4-star review! We appreciate your feedback. We're always working to improve NanoBanana. Explore our customization options (Feature 3) to personalize your experience. Feel free to share specific suggestions with us at support@nanobanana.com!",
+    "character_count": 255
+  },
+  {
+    "timestamp": "2025-09-29T20:29:28.945029",
+    "review_id": "test_7",
+    "review_text": "Отличное приложение! Рекомендую",
+    "rating": 5,
+    "language": "ru",
+    "original_ai_response": "Большое спасибо за ваш отзыв! Мы очень рады, что вам нравится наше приложение. 🍌 Пожалуйста, расскажите о NanoBanana друзьям! Попробуйте наши функции синхронизации данных и облачного хранения. 😉",
+    "final_response": "Большое спасибо за ваш отзыв! Мы очень рады, что вам нравится наше приложение. 🍌 Пожалуйста, расскажите о NanoBanana друзьям! Попробуйте наши функции синхронизации данных и облачного хранения. 😉",
+    "character_count": 194
+  },
+  {
+    "timestamp": "2025-09-29T20:30:13.307833",
+    "review_id": "b1a325ac-aff9-499a-8c9e-a3af5e2080eb",
+    "review_text": "\tok",
+    "rating": 5,
+    "language": "en",
+    "original_ai_response": "Hi! Thanks so much for the 5-star rating! We're so glad you're enjoying NanoBanana App. Feel free to explore our user-friendly interface and real-time data sync. Share the app with your friends!",
+    "final_response": "Hi! Thanks so much for the 5-star rating! We're so glad you're enjoying NanoBanana App. Feel free to explore our user-friendly interface and real-time data sync. Share the app with your friends!",
+    "character_count": 194
+  },
+  {
+    "timestamp": "2025-09-29T20:30:14.168873",
+    "review_id": "2552720c-68d4-4903-a08b-1662374d278b",
+    "review_text": "\tnice",
+    "rating": 5,
+    "language": "en",
+    "original_ai_response": "Thanks for the awesome review! We're so glad you like NanoBanana App! Tell your friends and explore all the features like real-time data sync and offline mode. Enjoy!",
+    "final_response": "Thanks for the awesome review! We're so glad you like NanoBanana App! Tell your friends and explore all the features like real-time data sync and offline mode. Enjoy!",
+    "character_count": 166
+  },
+  {
+    "timestamp": "2025-09-29T20:32:05.835454",
+    "review_id": "b1a325ac-aff9-499a-8c9e-a3af5e2080eb",
+    "review_text": "\tok",
+    "rating": 5,
+    "language": "en",
+    "original_ai_response": "Thanks for the 5-star rating! We're so glad you're enjoying the NanoBanana App. Feel free to explore our user-friendly interface and real-time data sync across your devices. Share the app with your friends!",
+    "final_response": "Thanks for the 5-star rating! We're so glad you're enjoying the NanoBanana App. Feel free to explore our user-friendly interface and real-time data sync across your devices. Share the app with your friends!",
+    "character_count": 206
+  },
+  {
+    "timestamp": "2025-09-29T20:34:30.862970",
+    "review_id": "b1a325ac-aff9-499a-8c9e-a3af5e2080eb",
+    "review_text": "\tok",
+    "rating": 5,
+    "language": "en",
+    "original_ai_response": "Thank you for the 5-star rating! We're so glad you're enjoying NanoBanana App! Explore our user-friendly interface and real-time data sync. Share the app with your friends!",
+    "final_response": "Thank you for the 5-star rating! We're so glad you're enjoying NanoBanana App! Explore our user-friendly interface and real-time data sync. Share the app with your friends!",
+    "character_count": 172
+  }
+]
