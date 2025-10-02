@@ -1,19 +1,14 @@
 {
   "version": 2,
-  "builds": [
+  "buildCommand": "cd frontend && npm run build",
+  "outputDirectory": "frontend/.next",
+  "installCommand": "cd frontend && npm install",
+  "framework": "nextjs",
+  "rewrites": [
     {
-      "src": "pages/api/index.py",
-      "use": "@vercel/python"
+      "source": "/(.*)",
+      "destination": "/frontend/$1"
     }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/pages/api/index.py"
-    }
-  ],
-  "env": {
-    "PYTHONPATH": "."
-  }
+  ]
 }
 

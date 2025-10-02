@@ -1,5 +1,5 @@
 """
-FastAPI backend for Google Play Reviews Dashboard
+FastAPI backend for Google Play Reviews Dashboard - Vercel Serverless
 """
 
 from fastapi import FastAPI, HTTPException, Depends, Header
@@ -8,14 +8,24 @@ from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
 import os
 import sys
+import json
 
-# Add parent directory to path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+# Add project root to path for imports
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, project_root)
 
-from auth import GooglePlayAuth
-from reviews import GooglePlayReviews
-from ai_response import AIResponseGenerator
-from user_manager import UserManager
+try:
+    from auth import GooglePlayAuth
+    from reviews import GooglePlayReviews
+    from ai_response import AIResponseGenerator
+    from user_manager import UserManager
+except ImportError as e:
+    print(f"Import error: {e}")
+    # Fallback for missing modules
+    GooglePlayAuth = None
+    GooglePlayReviews = None
+    AIResponseGenerator = None
+    UserManager = None
 
 app = FastAPI(
     title="Google Play Reviews API",
@@ -32,8 +42,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Initialize user manager
-user_manager = UserManager()
+# Initialize user manager safely
+user_manager = UserManager() if UserManager else None
 
 # Global variables for auth and reviews handler
 auth_handler = None
@@ -158,6 +168,10 @@ async def configure(config: PackageConfig):
     global auth_handler, reviews_handler, package_name
     
     try:
+        # Check if required classes are available
+        if not GooglePlayAuth or not GooglePlayReviews:
+            raise HTTPException(status_code=500, detail="Backend modules not available")
+        
         package_name = config.package_name
         
         # Use provided service account data
@@ -172,6 +186,8 @@ async def configure(config: PackageConfig):
         if config.enable_ai:
             if not config.gemini_api_key:
                 raise HTTPException(status_code=400, detail="Gemini API key is required for AI features")
+            if not AIResponseGenerator:
+                raise HTTPException(status_code=500, detail="AI module not available")
             ai_generator = AIResponseGenerator()
             # Set the API key for this session
             os.environ['GEMINI_API_KEY'] = config.gemini_api_key
