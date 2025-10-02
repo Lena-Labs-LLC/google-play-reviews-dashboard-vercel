@@ -9,13 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@tanstack/react-query": "^5.17.0",
+    "axios": "^1.6.0",
+    "clsx": "^2.1.0",
+    "google-auth-httplib2": "^0.0.1-security",
+    "google-auth-library": "^10.4.0",
+    "googleapis": "^161.0.0",
+    "lucide-react": "^0.300.0",
     "next": "14.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "axios": "^1.6.0",
-    "@tanstack/react-query": "^5.17.0",
-    "lucide-react": "^0.300.0",
-    "clsx": "^2.1.0",
     "tailwind-merge": "^2.2.0"
   },
   "devDependencies": {
@@ -28,4 +32,3 @@
     "typescript": "^5"
   }
 }
-
